@@ -6,4 +6,5 @@ func main() {
 	for x := 'a'; x <= 'z'; x += 1 {
 		z01.PrintRune(x)
 	}
+	z01.PrintRune('\n')
 }
