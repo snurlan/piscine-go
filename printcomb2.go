@@ -8,8 +8,8 @@ func PrintComb2() {
 
 	for i := '0'; i <= '9'; i += 1 {
 		for j := '0'; j <= '9'; j += 1 {
-			for k := '0'; k <= '9'; k += 1 {
-				for l := '0'; l <= '9'; l += 1 {
+			for k := i; k <= '9'; k += 1 {
+				for l := j; l <= '9'; l += 1 {
 					if i == k && j == l {
 						continue
 					}
