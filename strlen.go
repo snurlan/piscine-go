@@ -1,9 +1,11 @@
 package piscine
 
-func StrLen(str string) int {
+func StrLen(str string) int {	
 	cnt := 0
-	for index := range str {
-		cnt = index
+	cheat := 0
+	for i := range str {
+		cnt += 1
+		cheat = i
 	}
-	return cnt + 1
+	return cnt + cheat * 0
 }
