@@ -6,6 +6,10 @@ func IterativeFactorial(nb int) int {
 	} else if nb == 0 {
 		return 1
 	} else {
-		return IterativeFactorial(nb-1) * nb
+		res := IterativeFactorial(nb-1) * nb
+		if res < 0 {
+			return 0
+		}
+		return res
 	}
 }
