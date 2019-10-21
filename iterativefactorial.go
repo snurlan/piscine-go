@@ -5,7 +5,7 @@ func IterativeFactorial(nb int) int {
 		return 0
 	}
 	res := 1
-	for i := 2; i <= nb; i++  {
+	for i := 2; i <= nb; i++ {
 		res *= i
 		if res < 0 {
 			return 0
