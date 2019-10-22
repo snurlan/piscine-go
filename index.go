@@ -3,7 +3,7 @@ package piscine
 func Index(s string, toFind string) int {
 	sRunes := []rune(s)
 	toFindRunes := []rune(toFind)
-	for i, _ := range sRunes {
+	for i := range sRunes {
 		matches := true
 		for j, r2 := range toFindRunes {
 			if i+j >= len(sRunes) || sRunes[i+j] != r2 {
