@@ -14,11 +14,15 @@ func toUpper(r rune) rune {
 	return r
 }
 
+func isAlphanumeric(r rune) bool {
+	return r >= 'a' && r <= 'z' || r >= 'A' && r <= 'Z' || r >= '0' && r <= '9'
+}
+
 func Capitalize(s string) string {
 	runes := []rune(s)
 	flag := true
 	for i, r := range runes {
-		if !isAlpha(r) {
+		if !isAlphanumeric(r) {
 			flag = true
 			continue
 		}
