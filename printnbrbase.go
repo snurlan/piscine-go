@@ -6,8 +6,14 @@ func printNbrBase(nbr, n int, base []rune) {
 	if nbr == 0 {
 		return
 	}
-	printNbrBase(nbr/n, n, base)
-	z01.PrintRune(base[nbr%n])
+	if nbr < 0 {
+		z01.PrintRune('-')
+		printNbrBase(-nbr/n, n, base)
+		z01.PrintRune(base[-nbr%n])
+	} else {
+		printNbrBase(nbr/n, n, base)
+		z01.PrintRune(base[nbr%n])
+	}
 }
 
 func PrintNbrBase(nbr int, base string) {
@@ -35,11 +41,6 @@ func PrintNbrBase(nbr int, base string) {
 		z01.PrintRune('N')
 		z01.PrintRune('V')
 		return
-	}
-
-	if nbr < 0 {
-		z01.PrintRune('-')
-		nbr *= -1
 	}
 
 	if nbr == 0 {
