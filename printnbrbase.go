@@ -8,7 +8,7 @@ func printNbrBase(nbr, n int, base []rune) {
 	}
 	if nbr < 0 {
 		z01.PrintRune('-')
-		printNbrBase(-nbr/n, n, base)
+		printNbrBase(-(nbr / n), n, base)
 		mod := nbr % n
 		if mod < 0 {
 			mod = -mod
