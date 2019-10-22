@@ -3,18 +3,15 @@ package piscine
 import "github.com/01-edu/z01"
 
 func PrintNbrInOrder(n int) {
-	if n < 0 {
-		z01.PrintRune('-')
-		if n/-10 != 0 {
-			PrintNbrInOrder(n / -10)
+	var cnt [10]int
+	for n != 0 {
+		cnt[n%10]++
+		n /= 10
+	}
+	for i := 0; i < 10; i++ {
+		for cnt[i] > 0 {
+			z01.PrintRune(rune(i) + '0')
+			cnt[i]--
 		}
-		z01.PrintRune(rune(-(n % 10)) + '0')
-	} else if n == 0 {
-		z01.PrintRune('0')
-	} else {
-		if n/10 != 0 {
-			PrintNbrInOrder(n / 10)
-		}
-		z01.PrintRune(rune(n%10) + '0')
 	}
 }
