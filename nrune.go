@@ -1,5 +1,13 @@
 package piscine
 
 func NRune(s string, n int) rune {
-	return []rune(s[n-1 : n])[0]
+	runes := []rune(s)
+	cur := 0
+	for index := range s {
+		if index+1 == n {
+			return runes[cur]
+		}
+		cur++
+	}
+	return '('
 }
