@@ -14,20 +14,14 @@ func main() {
 	args := os.Args[1:]
 	var vowels []rune
 	cnt := 0
-	hasArgs := false
+
 	for _, arg := range args {
-		hasArgs = true
 		for _, r := range arg {
 			if isVowel(r) {
 				vowels = append(vowels, r)
 				cnt++
 			}
 		}
-	}
-
-	if !hasArgs {
-		z01.PrintRune('\n')
-		return
 	}
 
 	cur := 0
@@ -47,4 +41,6 @@ func main() {
 			}
 		}
 	}
+
+	z01.PrintRune('\n')
 }
