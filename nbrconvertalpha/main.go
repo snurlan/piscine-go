@@ -8,9 +8,10 @@ import (
 
 func main() {
 	args := os.Args[1:]
-	isUpper := args[0] == "--upper"
+	isUpper := false
 	for i, arg := range args {
-		if i == 0 && isUpper {
+		if i == 0 && arg == "--upper" {
+			isUpper = true
 			continue
 		}
 		num := 0
@@ -32,4 +33,5 @@ func main() {
 		}
 		z01.PrintRune(r)
 	}
+	z01.PrintRune('\n')
 }
