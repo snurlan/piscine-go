@@ -7,20 +7,27 @@ import (
 )
 
 func isVowel(r rune) bool {
-	return r == 'a' || r == 'o' || r == 'y' || r == 'u' || r == 'e' || r == 'i' || r == 'A' || r == 'O' || r == 'Y' || r == 'U' || r == 'E' || r == 'I'
+	return r == 'a' || r == 'o' || r == 'u' || r == 'e' || r == 'i' || r == 'A' || r == 'O' || r == 'U' || r == 'E' || r == 'I'
 }
 
 func main() {
 	args := os.Args[1:]
 	var vowels []rune
 	cnt := 0
+	hasArgs := false
 	for _, arg := range args {
+		hasArgs = true
 		for _, r := range arg {
 			if isVowel(r) {
 				vowels = append(vowels, r)
 				cnt++
 			}
 		}
+	}
+
+	if !hasArgs {
+		z01.PrintRune('\n')
+		return
 	}
 
 	cur := 0
