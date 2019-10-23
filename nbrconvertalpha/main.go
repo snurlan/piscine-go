@@ -12,6 +12,7 @@ func main() {
 	for i, arg := range args {
 		if i == 0 && arg == "--upper" {
 			isUpper = true
+			z01.PrintRune(' ')
 			continue
 		}
 		num := 0
